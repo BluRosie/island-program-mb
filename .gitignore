@@ -1,0 +1,14 @@
+*.map
+*.gba
+*.bak
+*.elf
+*.sav
+build/
+payload/build
+tools/agbcc
+tools/binutils
+*.exe
+*.lz
+*.dump
+.idea
+payload/payload.bin

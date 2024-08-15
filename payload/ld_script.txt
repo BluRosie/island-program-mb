@@ -1,0 +1,30 @@
+gGlobalStructure = 0x03000010;
+gIntrTable = 0x030023C0;
+
+/* TODO deal with these proper */
+
+
+SECTIONS {
+    . = 0x02018000;
+    .text :
+    ALIGN(4)
+    {
+        asm/crt0.o(.text);
+        src/all.o(.text);
+        asm/all.o(.text);
+    } =0
+
+    .rodata :
+    ALIGN(4)
+    {
+		src/all.o(.rodata);
+		data/data.o(.data);
+    } =0
+
+    . = 0x02040000; /* Limit EWRAM size */
+
+    /DISCARD/ :
+    {
+        *(*);
+    }
+}
